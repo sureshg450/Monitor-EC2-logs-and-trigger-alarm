@@ -31,8 +31,7 @@ Monitor EC2 logs and trigger alarm
  
 
 4\ Login into Ec2 machine and install unified cloud-watch agent and configure app logs.
- 
-vi /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+ vi /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
 {
   "logs": {
     "logs_collected": {
@@ -40,19 +39,8 @@ vi /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
         "collect_list": [
           {
             "file_path": "/var/log/application.log",
-            "log_group_name": "application_logs",
-            "log_stream_name": "{instance_id}",
-            "timestamp_format": "%b %d %H:%M:%S",
-            "initial_position": "start_of_file",
-            "buffer_duration": 5000
-          }
-        ]
-      }
-    },
-    "log_stream_name": "{instance_id}",
-    "force_flush_interval": 5
-  }
-}
+            "log_group_name": "application_l
+
 ==============================================================
 4\ Run,
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
